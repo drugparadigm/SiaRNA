@@ -1,5 +1,0 @@
-src/checkpoints/
-src/trained_model/
-src/NPInter2_Pretrain_graphsage_dataset/
-*.pth
-*.pt
