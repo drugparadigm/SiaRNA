@@ -178,7 +178,12 @@ def main():
     mRNA_path=args.mRNA_seq_file
     siRNA_path=args.siRNA_seq_file
     
-    # print("Preprocessing........")
+    try:
+        os.makedirs(INPUT_DIR, exist_ok=True)
+        # print(f"Directory '{folder_path}' ensured (created or already exists).")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    
     try:
         preprocess.main(reqId, mRNA_path, siRNA_path)
     except:
