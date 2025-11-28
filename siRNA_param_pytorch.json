@@ -1,0 +1,6 @@
+{
+  "sirna_length": 21,
+  "max_mrna_len": 9756,
+  "batch_size": 32,
+  "epochs": 20
+}
