@@ -23,6 +23,10 @@ conda env create -f environment.yaml
 conda activate siarna
 ```
 
+## Input Format
+The model expects both siRNA and mRNA sequences to be provided in FASTA (.fa) format. Each siRNA entry must contain a single sequence of exactly 21 nucleotides, while the corresponding mRNA can vary between 21 and 2000 nucleotides in length. These length constraints ensure that the input strictly aligns with the biological characteristics required by the SiaRNA model for accurate prediction.
+
+
 ## Running the Code
 
 You can perform inference on the model by running `infer.py`. We have included sample files, mRNA.fa and siRNA.fa, in the current directory for testing.
