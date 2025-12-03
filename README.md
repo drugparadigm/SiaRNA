@@ -12,6 +12,7 @@ The outputs from the feature-based and attention-based modules are then fused wi
 
 Ensure that you have the following installed to run the code smoothly:
 
+- Operating System: **Linux** or **macOS**
 - **Anaconda/Miniconda** (Highly recommended for environment management)
 - Python 3.x
 - Required packages specified in `environment.yaml`
@@ -29,7 +30,7 @@ The model expects both siRNA and mRNA sequences to be provided in FASTA (.fa) fo
 
 ## Running the Code
 
-You can perform inference on the model by running `infer.py`. We have included sample files, mRNA.fa and siRNA.fa, in the current directory for testing.
+You can perform inference on the model by running `infer.py`. We have included sample files, mRNA.fa and siRNA.fa for sample inference.
 
 The script requires three arguments: a request ID, the path to the mRNA FASTA file, and the path to the siRNA FASTA file.
 
