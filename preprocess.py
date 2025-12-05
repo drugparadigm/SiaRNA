@@ -31,9 +31,9 @@ def main(request_Id: str, mRNA_path: str, siRNA_path:str):
         mrna_id = seq_record.id
         seq = str(seq_record.seq).upper().strip()
         if len(seq)>2000 or len(seq)<21:
-            raise ValueError(f"Invalid length of sequence {len(seq)}")
+            raise ValueError(f"Invalid length of mRNA sequence {len(seq)}")
         if any(base not in allowed_chars_mrna for base in seq):
-            raise ValueError(f"Sequence contains un-recognized characters")
+            raise ValueError(f"mRNA sequence contains un-recognized characters")
         mrna_map.append((mrna_id, str(seq)))
     
     mrna_df = pd.DataFrame(mrna_map, columns=['mRNA', 'mRNA_seq'])
@@ -46,10 +46,10 @@ def main(request_Id: str, mRNA_path: str, siRNA_path:str):
     for seq_record in SeqIO.parse(sirna_file, "fasta"):
         sirna_id = seq_record.id
         seq = str(seq_record.seq).upper().strip()
-        if len(seq)!= 21:
-            raise ValueError(f"Invalid length of sequence {len(seq)}")
+        if len(seq) != 21:
+            raise ValueError(f"Invalid length of siRNA sequence {len(seq)}")
         if any(base not in allowed_chars_sirna for base in seq):
-            raise ValueError(f"Sequence contains un-recognized characters")
+            raise ValueError(f"siRNA sequence contains un-recognized characters")
         sirna_map.append((sirna_id, seq))
     sirna_df = pd.DataFrame(sirna_map, columns=['siRNA', 'siRNA_seq'])
     
